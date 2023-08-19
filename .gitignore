@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/basicCrud.net/FileContentIndex
+/bin/Debug/net6.0/af
+/bin/Debug/net6.0
+/.vs/basicCrud.net/v17
+/.vs
+/obj
+/Properties
+*.user

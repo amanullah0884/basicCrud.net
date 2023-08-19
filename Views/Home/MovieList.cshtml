@@ -1,0 +1,57 @@
+﻿@model IEnumerable<BascCrud.Models.Movie>
+
+@{
+    ViewData["Title"] = "MovieList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>MovieList</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <span asp-for="Model.ID"></span>
+            </th>
+            <th>
+                <span asp-for="Model.Title"></span>
+            </th>
+            <th>
+                <span asp-for="Model.ReleaseDate"></span>
+            </th>
+            <th>
+                <span asp-for="Model.Genre"></span>
+            </th>
+            <th>
+                <span asp-for="Model.Price"></span>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <span>@item.ID</span>
+                </td>
+                <td>
+                    <span>@item.Title</span>
+                </td>
+                <td>
+                    <span>@item.ReleaseDate</span>
+                </td>
+                <td>
+                    <span>@item.Genre</span>
+                </td>
+                <td>
+                    <span>@item.Price</span>
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
