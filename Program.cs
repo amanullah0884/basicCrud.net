@@ -1,3 +1,7 @@
+using BasicCrud.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+
 internal class Program
 {
     private static void Main(string[] args)
@@ -7,6 +11,10 @@ internal class Program
         // Add services to the container.
         builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
         builder.Services.AddSession();
+        builder.Services.AddDbContext<StudentDbContext>(options =>
+        {
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+        });
 
         var app = builder.Build();
 
