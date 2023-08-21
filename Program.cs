@@ -14,6 +14,11 @@ internal class Program
         builder.Services.AddDbContext<StudentDbContext>(options =>
         {
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+        }); 
+        
+        builder.Services.AddDbContext<MovieDbContext>(options =>
+        {
+            options.UseSqlServer(builder.Configuration.GetConnectionString("MovieConnection"));
         });
 
         var app = builder.Build();
